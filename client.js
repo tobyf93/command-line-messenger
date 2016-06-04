@@ -10,20 +10,23 @@ const net = require('net'),
 
   if (!port) {
     console.error('No Port Specified');
+    return;
   }
 
-  const client = net.createConnection({ port })
+  const socket = net.createConnection({ port })
     .on('connect', () => {
-      const address = client.address();
+      const address = socket.address();
       console.log('Connected To Server: %j', address);
 
-      rl.question('> ', (answer) => {
-        client.write(answer);
-        rl.close();
-      });
+      (function prompt() {
+        rl.question('', (answer) => {
+          socket.write(answer);
+          prompt();
+        });
+      })();
     })
     .on('data', (data) => {
-      console.log(`received: ${data}`);
+      console.log(`> ${data.toString()}`);
     })
     .on('end', () => {
       console.log('Disconnected From Server');

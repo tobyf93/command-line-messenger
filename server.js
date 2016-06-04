@@ -6,8 +6,11 @@ const net = require('net');
       const address = server.address();
       console.log('Started server: %j', address);
     })
-    .on('connection', () => {
-      console.log('CONNECTION MADE!!!!');
+    .on('connection', (socket) => {
+      socket.on('data', (data) => {
+        // console.log(data.toString());
+        socket.write(data)
+      });
     })
     .on('error', (err) => {
       throw err;
