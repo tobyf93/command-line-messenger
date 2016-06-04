@@ -6,7 +6,13 @@ const net = require('net');
   const emitMessage = function(message) {
     sockets.forEach((socket) => {
       socket.write(message);
-    })
+    });
+  }
+
+  const removeSocket = function(socket) {
+    const index = sockets.indexOf(socket);
+    sockets = [...sockets.slice(0, index), ...sockets.slice(index + 1)];
+    console.log(`sockets: ${sockets.length}`);
   }
 
   const server = net.createServer()
@@ -16,10 +22,15 @@ const net = require('net');
     })
     .on('connection', (socket) => {
       sockets.push(socket);
+      console.log(`sockets: ${sockets.length}`);
 
-      socket.on('data', (message) => {
-        emitMessage(message);
-      });
+      socket
+        .on('data', (message) => {
+          emitMessage(message);
+        })
+        .on('close', () => {
+          removeSocket(socket);
+        });
     })
     .on('error', (err) => {
       throw err;
