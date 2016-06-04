@@ -1,4 +1,4 @@
-global.sockets = [];
+global.users = [];
 const net = require('net'),
       serverListening = require('./lib/serverListening'),
       connectionEstablished = require('./lib/connectionEstablished');

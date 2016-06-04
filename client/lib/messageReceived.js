@@ -1,5 +1,5 @@
 module.exports = dataReceived;
 
 function dataReceived(data) {
-  console.log(`> ${data.toString()}`);
+  console.log(data.toString());
 }
