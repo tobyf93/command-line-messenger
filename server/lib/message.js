@@ -1,9 +1,9 @@
-const userUtils = require('./userUtils');
+const users = require('./users');
 
 module.exports = messageReceived;
 
 function messageReceived(socket, message) {
-  const user = userUtils.findUser(socket);
+  const user = users.find(socket);
 
   if (!user.name) {
     user.name = message;

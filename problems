@@ -1,0 +1,8 @@
+- New users not being able to see thread
+- incoming messages interfering with outgoing messages
+- When a message is send on the client, output to message prompt is shown as well
+as timestamped message from server.  Perhaps i could create my own output stream
+that controls when text should be output.  Idea - if the output doesn't have a
+newline character output it to stdout as user needs to see what they are typing.
+When user inserts a newline it means message has been submitted and we don't show
+output until we receive message back from server.
