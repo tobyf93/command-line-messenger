@@ -17,7 +17,7 @@ Why make an instant messenger for the command line?  I'd be asking the same thin
 #Usage
 - Clone the repo `git clone git@github.com:tobyf93/command-line-messenger.git`
 - Install Node.js (>= v5.11.1)
-- Install project dependencies `npm i`
+- Install project dependencies `npm i` 
 - Get servers IP address `ifconfig`
 - Fire up TCP server `node server.js --host SERVER_IP --port 3000`
 - Connect clients `node client.js --host SERVER_IP --port 3000`
