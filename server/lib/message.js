@@ -1,4 +1,5 @@
-const users = require('./users');
+const localMessenger = require('./localMessenger'),
+      users = require('./users');
 
 module.exports = messageReceived;
 
@@ -6,30 +7,45 @@ function messageReceived(socket, message) {
   const user = users.find(socket);
 
   if (!user.name) {
-    user.name = message;
+    user.name = message.toUpperCase();
     emitLogs(socket);
+    emitUserJoined(user.name);
   } else {
-    emitToAll(user.name, message);
+    emitMessage(user.name, message);
   }
 }
 
-function emitToAll(userName, message) {
+function emitUserJoined(userName) {
+  const date = new Date();
+  const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  message = `[${time}] ${userName} JOINED THE CHAT`;
+
+  emitToAll(message);
+}
+
+function emitMessage(userName, message) {
   const date = new Date();
   const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   message = `[${time}] ${userName} | ${message}`;
 
   logMessage(message);
-  localMessenger.users.forEach((user) => {
+  emitToAll(message);
+}
+
+function emitToAll(message) {
+  var users = localMessenger.getUsers();
+  users.forEach((user) => {
     user.socket.write(message);
   });
 }
 
 function emitLogs(socket) {
-  localMessenger.messageLog.forEach((message) => {
+  var messageLog = localMessenger.getMessageLog();
+  messageLog.forEach((message) => {
     socket.write(`${message}\n`);
   });
 }
 
 function logMessage(message) {
-  localMessenger.messageLog.push(message);
+  localMessenger.logMessage(message);
 }

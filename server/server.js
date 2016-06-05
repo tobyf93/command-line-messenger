@@ -1,8 +1,3 @@
-global.localMessenger = {
-  users: [],
-  messageLog: []
-};
-
 const net = require('net'),
       serverListening = require('./lib/serverListening'),
       connectionEstablished = require('./lib/connectionEstablished');

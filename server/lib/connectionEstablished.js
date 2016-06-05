@@ -7,6 +7,6 @@ function connectionEstablished(socket) {
   users.add(socket);
 
   socket
-    .on('data', (data) => messageReceived(socket, data))
+    .on('data', (data) => messageReceived(socket, data.toString()))
     .on('close', () => users.remove(socket));
 }

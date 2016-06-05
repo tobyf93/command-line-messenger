@@ -1,6 +1,3 @@
-module.exports = outputStats;
+const localMessenger = require('./localMessenger');
 
-function outputStats() {
-  console.log(`User Count: ${localMessenger.users.length}`);
-  console.log(`Messages: ${localMessenger.messageLog.length}\n`);
-}
+module.exports = outputStats;

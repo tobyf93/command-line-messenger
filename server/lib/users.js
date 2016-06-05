@@ -1,4 +1,4 @@
-const outputStats = require('./outputStats');
+const localMessenger = require('./localMessenger');
 
 module.exports = {
   add,
@@ -7,28 +7,23 @@ module.exports = {
 };
 
 function add(socket) {
-  localMessenger.users.push({
+  localMessenger.addUser({
     name: undefined,
     socket
   });
-
-  outputStats();
 }
 
 function remove(socket) {
   const i = index(socket);
 
-  localMessenger.users = [
-    ...localMessenger.users.slice(0, i),
-    ...localMessenger.users.slice(i + 1)
-  ];
-
-  outputStats();
+  localMessenger.removeUser(i);
 }
 
 function find(socket) {
-  for (var i in localMessenger.users) {
-    var user = localMessenger.users[i];
+  var users = localMessenger.getUsers();
+
+  for (var i in users) {
+    var user = users[i];
     if (user.socket === socket) {
       return user;
     }
@@ -36,8 +31,10 @@ function find(socket) {
 }
 
 function index(socket) {
-  for (var i in localMessenger.users) {
-    var user = localMessenger.users[i];
+  var users = localMessenger.getUsers();
+
+  for (var i in users) {
+    var user = users[i];
     if (user.socket === socket) {
       return i;
     }
