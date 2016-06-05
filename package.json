@@ -1,0 +1,22 @@
+{
+  "name": "command-line-messenger",
+  "version": "1.0.0",
+  "description": "(Currently Under Construction)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobyf93/command-line-messenger.git"
+  },
+  "author": "Toby Flemming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobyf93/command-line-messenger/issues"
+  },
+  "homepage": "https://github.com/tobyf93/command-line-messenger#readme",
+  "dependencies": {
+    "argparse": "^1.0.7"
+  }
+}
