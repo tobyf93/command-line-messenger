@@ -42,7 +42,7 @@ this is my message                  // client input
 ```
 See the duplicate messages?  It seems as though when a user inputs a message via the command line the `readline` interface in Node.js writes it to the stdout steam before being able to read in the stdin steam.  Not sure if there is a way to intercept data written to stdout?
 
-##Problem \#2
+##Problem \#2 (Solved)
 Involves the server interfering with client input when messages are emitted.  Assume the same server is still running and we will connect two clients: Toby and Frank
 ```
 // Toby's client
@@ -70,6 +70,9 @@ Toby
 [15:42:37] TOBY | hello my name is Toby
 ```
 Now i am not 100% across stdin/stdout streams but it seems as though Frank's Message gets written to stdout but doesn't effect the original `Hello my name is Toby` buffer.  Again i'm not even sure it's possible to fix this issue but would love some feedback.
+
+###Solution
+Use the [keypress](https://www.npmjs.com/package/keypress) package to allow `process.stdin` to emit keypress events.  When a user is typing a message, the client stores received messages in a message queue.  This queue is output after the user sends their message.
 
 #Todos
 - Only accept new client connections if a unique username is provided.
