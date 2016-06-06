@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tobyf93/command-line-messenger#readme",
   "dependencies": {
-    "argparse": "^1.0.7"
+    "argparse": "1.0.7",
+    "keypress": "0.2.1"
   }
 }

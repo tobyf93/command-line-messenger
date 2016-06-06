@@ -1,10 +1,13 @@
 const net = require('net'),
+      keypress = require('./lib/keypress'),
       ArgumentParser = require('argparse').ArgumentParser,
       connectionEstablished = require('./lib/connectionEstablished'),
       messageReceived = require('./lib/messageReceived'),
       connectionEnded = require('./lib/connectionEnded');
 
 (function() {
+  keypress.listen(process.stdin);
+
   var parser = new ArgumentParser({
     version: '0.0.1',
     addHelp: true
