@@ -74,7 +74,7 @@ Now i am not 100% across stdin/stdout streams but it seems as though Frank's Mes
 #Todos
 - Only accept new client connections if a unique username is provided.
 - Use a library like [blessed](https://github.com/chjj/blessed) to create a client user interface that:
-  - Has message thread separate to user input
+  - Has message thread separate to user input (may be a work around current problems)
   - Has 'Online Users' panel
 
 #Contributing
