@@ -22,7 +22,7 @@ Why make an instant messenger for the command line?  I'd be asking the same thin
 - Fire up TCP server `node server.js --host HOST_IP --port HOST_PORT`
 - Connect clients `node client.js --host HOST_IP --port HOST_PORT`
 
-*Note:*  I only ever tested this on a Local Area Network but who knows.  It could work fine over the interwebs...
+*Note:*  I only ever tested this on a Local Area Network.
 
 #Using stdin/stdout For Two-way Communication
 ##Problem \#1
