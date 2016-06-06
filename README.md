@@ -12,7 +12,7 @@ The client is fairly dumb in that it is only concerned with sending/receiving me
 #Why?
 Why make an instant messenger for the command line?  I'd be asking the same thing...  This project was the result of being at [campJS 2016](http://campjs.com/) with no internet and very little resources (only Javascript/Node.js documentation).  I quickly realised how much i relied on communication tools like Slack and Hipchat and thought why not have a crack at my own.  Is it practical?  No.  Is it secure?  Nope.  But it has given me the chance to learn about:
 - Node.js and its core modules
-- New ES6 syntax (arrow functions and spread operators)
+- New ES6 syntax
 
 #Usage
 - Clone the repo `git clone git@github.com:tobyf93/command-line-messenger.git`
