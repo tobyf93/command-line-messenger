@@ -12,15 +12,20 @@ Why make an instant messenger for the command line?  I'd be asking the same thin
 - Node.js and its core modules
 - New ES6 syntax
 
-#Usage
+#Setup
 - Clone the repo `git clone git@github.com:tobyf93/command-line-messenger.git`
 - Install Node.js (>= v5.11.1)
 - Install project dependencies `npm i`
-- Get hosts IP address `ifconfig`
-- Fire up TCP server `node server.js --host HOST_IP --port HOST_PORT`
-- Connect clients `node client.js --host HOST_IP --port HOST_PORT`
 
-*Note:*  I only ever tested this on a Local Area Network.
+#Usage
+##localhost
+- Start server `node server.js --host localhost --port 3000`
+- Connect clients `node client.js --host localhost --port 3000`
+
+##Local Area Network
+- Get host's IP address `ifconfig`
+- Start server `node server.js --host 0.0.0.0 --port 3000`
+- Connect clients `node client.js --host HOST_IP --port 3000`
 
 #Using stdin/stdout For Two-way Communication
 ##Problem \#1
