@@ -69,16 +69,16 @@ hello my name is [15:40:52] FRANK | MESSAGE!
 Toby
 [15:42:37] TOBY | hello my name is Toby
 ```
-Now i am not 100% across stdin/stdout streams but it seems as though Frank's Message gets written to stdout but doesn't effect the original 'Hello my name is Toby' buffer.  Again i'm not even sure it's possible to fix this issue but would love some feedback.
+Now i am not 100% across stdin/stdout streams but it seems as though Frank's Message gets written to stdout but doesn't effect the original `Hello my name is Toby` buffer.  Again i'm not even sure it's possible to fix this issue but would love some feedback.
 
 #Todos
 - Only accept new client connections if a unique username is provided.
 - Use a library like [blessed](https://github.com/chjj/blessed) to create a client user interface that:
-  - Has message thread separate to user input
+  - Has message thread separate to user input (may be a work around current problems)
   - Has 'Online Users' panel
 
 #Contributing
-- Fork it (https://github.com/tobyf93/command-line-messenger)
+- Fork it https://github.com/tobyf93/command-line-messenger
 - Create feature branch `git checkout -b awesome-feature`
 - Commit changes `git commit -am 'Some awesome change'`
 - Push branch `git push origin awesome-feature`
