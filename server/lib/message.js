@@ -1,14 +1,16 @@
 const localMessenger = require('./localMessenger'),
       users = require('./users');
 
-module.exports = messageReceived;
+module.exports = {
+  received,
+  emitLogs
+};
 
-function messageReceived(socket, message) {
+function received(socket, message) {
   const user = users.find(socket);
 
   if (!user.name) {
     user.name = message.toUpperCase();
-    emitLogs(socket);
     emitUserJoined(user.name);
   } else {
     emitMessage(user.name, message);

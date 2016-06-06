@@ -1,4 +1,4 @@
-var receivingMessages = true,
+var receivingMessages = false,
     messageQueue = [];
 
 module.exports = {
@@ -27,4 +27,6 @@ function outputMessageQueue() {
   messageQueue.forEach((message) => {
     console.log(message);
   });
+
+  messageQueue = [];
 }
