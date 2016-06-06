@@ -78,7 +78,7 @@ Now i am not 100% across stdin/stdout streams but it seems as though Frank's Mes
   - Has 'Online Users' panel
 
 #Contributing
-- Fork it (https://github.com/tobyf93/command-line-messenger)
+- Fork it https://github.com/tobyf93/command-line-messenger
 - Create feature branch `git checkout -b awesome-feature`
 - Commit changes `git commit -am 'Some awesome change'`
 - Push branch `git push origin awesome-feature`
