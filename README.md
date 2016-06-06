@@ -29,7 +29,9 @@ Coming soon
 
 #Todos
 - Only accept new client connections if a unique username is provided.
-- Use a library like [blessed](https://github.com/chjj/blessed) to create a user interface where message thread is separated from user input.
+- Use a library like [blessed](https://github.com/chjj/blessed) to create a client user interface that:
+  - Has message thread separate to user input
+  - Has 'Online Users' panel
 
 #Contributing
 - Fork it (https://github.com/tobyf93/command-line-messenger)
