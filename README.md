@@ -17,15 +17,26 @@ Why make an instant messenger for the command line?  I'd be asking the same thin
 #Usage
 - Clone the repo `git clone git@github.com:tobyf93/command-line-messenger.git`
 - Install Node.js (>= v5.11.1)
-- Install project dependencies `npm i` 
-- Get servers IP address `ifconfig`
-- Fire up TCP server `node server.js --host SERVER_IP --port 3000`
-- Connect clients `node client.js --host SERVER_IP --port 3000`
+- Install project dependencies `npm i`
+- Get hosts IP address `ifconfig`
+- Fire up TCP server `node server.js --host HOST_IP --port HOST_PORT`
+- Connect clients `node client.js --host HOST_IP --port HOST_PORT`
 
-*Note:*  I only ever tested this on a Local Area Network.
+*Note:*  I only ever tested this on a Local Area Network but who knows.  It could work fine over the interwebs...
 
 #Problems I Encountered
 Coming soon
+
+#Todos
+- Only accept new client connections if a unique username is provided.
+- Use a library like [blessed](https://github.com/chjj/blessed) to create a user interface where message thread is separated from user input.
+
+#Contributing
+- Fork it (https://github.com/tobyf93/command-line-messenger)
+- Create feature branch `git checkout -b awesome-feature`
+- Commit changes `git commit -am 'Some awesome change'`
+- Push branch `git push origin awesome-feature`
+- Create a pull request
 
 #Copyright & License
 All code in this repository is released under the terms of the MIT License.
