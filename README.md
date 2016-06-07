@@ -1,4 +1,4 @@
-#Overview
+#Overview 
 An instant messaging service with a command line interface because who needs fancy GUI's.  This project is built with Node.js, using the core Network module to communicate through TCP sockets over a Local Area Network.
 
 #Server
