@@ -42,10 +42,10 @@ Name: Toby
 So far so good!  We have established a connection, provided our username and the server has acknowledged this by emitting a status update.  Now lets start chatting!
 ```
 [13:5:8] TOBY JOINED THE CHAT
-this is my message                  // client input
+this is my message                  // client input after hitting 'enter'
 [13:8:5] TOBY | this is my message  // message emitted from server
 ```
-See the duplicate messages?  It seems as though when a user inputs a message via the command line the `readline` interface in Node.js writes it to the stdout steam before being able to read in the stdin steam.  Not sure if there is a way to intercept data written to stdout?
+See the duplicate messages?  It seems as though when a user inputs a message via the command line the `readline` interface in Node.js writes it to the stdout stream before being able to read in the stdin stream.  Ideally i would want to accept input without writing it to stdout but i don't think it's possible as the user needs to be able to see what they're typing...
 
 ##Problem \#2 (Solved)
 Involves the server interfering with client input when messages are emitted.  Assume the same server is still running and we will connect two clients: Toby and Frank
@@ -76,7 +76,7 @@ Toby
 ```
 Now i am not 100% across stdin/stdout streams but it seems as though Frank's Message gets written to stdout but doesn't effect the original `Hello my name is Toby` buffer.  Again i'm not even sure it's possible to fix this issue but would love some feedback.
 
-###Solution
+###Solution (open to better solutions)
 Use the [keypress](https://www.npmjs.com/package/keypress) package to allow `process.stdin` to emit keypress events.  When a user is typing a message, the client stores received messages in a message queue.  This queue is output after the user sends their message.
 
 #Todos
