@@ -24,7 +24,7 @@ Why make an instant messenger for the command line?  I'd be asking the same thin
 
 ##Local Area Network
 - Get host's IP address `ifconfig`
-- Start server `node server.js --host 0.0.0.0 --port 3000`
+- Start server `node server.js --host HOST_IP --port 3000`
 - Connect clients `node client.js --host HOST_IP --port 3000`
 
 #Using stdin/stdout For Two-way Communication
