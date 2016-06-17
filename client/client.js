@@ -14,7 +14,7 @@ const net = require('net'),
   });
 
   parser.addArgument(
-    [ '--host' ],
+    ['--host'],
     {
       required: true,
       help: 'Address of server.'
@@ -22,7 +22,7 @@ const net = require('net'),
   );
 
   parser.addArgument(
-    [ '-p', '--port' ],
+    ['--port', '-p'],
     {
       required: true,
       help: 'Port of server.'

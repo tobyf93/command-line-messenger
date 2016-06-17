@@ -10,7 +10,7 @@ const net = require('net'),
   });
 
   parser.addArgument(
-    [ '--host' ],
+    ['--host'],
     {
       required: false,
       help: 'Set server host.  Defaults to 0.0.0.0'
@@ -18,7 +18,7 @@ const net = require('net'),
   );
 
   parser.addArgument(
-    [ '-p', '--port' ],
+    ['--port', '-p'],
     {
       required: false,
       help: 'Set server port.  Defaults to 3000'
@@ -35,6 +35,6 @@ const net = require('net'),
 
   server.listen({
     host: args.host || '0.0.0.0',
-    port: args.post || 3000
+    port: args.port || 3000
   });
 })();
