@@ -79,12 +79,6 @@ Now i am not 100% across stdin/stdout streams but it seems as though Frank's Mes
 ###Solution (open to better solutions)
 Use the [keypress](https://www.npmjs.com/package/keypress) package to allow `process.stdin` to emit keypress events.  When a user is typing a message, the client stores received messages in a message queue.  This queue is output after the user sends their message.
 
-#Todos
-- Only accept new client connections if a unique username is provided.
-- Use a library like [blessed](https://github.com/chjj/blessed) to create a client user interface that:
-  - Has message thread separate to user input (may be a work around current problems)
-  - Has 'Online Users' panel
-
 #Contributing
 - Fork it https://github.com/tobyf93/command-line-messenger
 - Create feature branch `git checkout -b awesome-feature`
