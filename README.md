@@ -76,7 +76,7 @@ Toby
 ```
 Now i am not 100% across stdin/stdout streams but it seems as though Frank's Message gets written to stdout but doesn't effect the original `Hello my name is Toby` buffer.
 
-###Solution (open to better solutions)
+###Solution
 Use the [keypress](https://www.npmjs.com/package/keypress) package to allow `process.stdin` to emit keypress events.  When a user is typing a message, the client stores received messages in a message queue.  This queue is output after the user sends their message.
 
 #Contributing
